@@ -2,19 +2,19 @@ import React, { useState } from "react";
 import "./App.css";
 
 const App = () => {
-  const state = useState();
+  let newTime = new Date().toLocaleTimeString();
+  const [ctime, setCtime] = useState(newTime);
 
-  const [count, setCount] = useState(0);
-
-  const IncNum = () => {
-    setCount(count + 1);
+  const UpdateTime = () => {
+    newTime = new Date().toLocaleTimeString();
+    setCtime(newTime);
   };
 
   return (
     <>
       <div className="container">
-        <h1> {count} </h1>
-        <button className="button" onClick={IncNum}>click me</button>
+        <h1> {ctime} </h1>
+        <button className="button" onClick={UpdateTime}>Get Time</button>
       </div>
     </>
 
